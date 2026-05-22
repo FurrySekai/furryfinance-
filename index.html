@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>퍼리파이낸스 | 퍼리세카이 초경량 금융 전광판</title>
-    <meta name="description" content="로그인 없이 0.1초 만에 확인하는 직장인 듀얼모니터용 초경량 주식, 코인, 환율, 금리. 퍼리세카이(FURRYSEKAI)의 미니 금융 전광판 서비스.">
+    <meta name="description" content="로그인 없이 0.1초 만에 확인하는 직장인 듀얼모니터용 초경량 주식, 코인, 환율, 금리.">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
     <style>
@@ -32,18 +32,18 @@
         <div class="flex items-center gap-3">
             <div class="flex items-center gap-1.5 bg-white px-3 py-1.5 rounded-full shadow-xs border border-slate-100/80">
                 <span class="text-[11px] font-bold text-slate-400">스텔스 모드</span>
-                <input id="opacity-slider" type="range" min="10" max="100" value="100" oninput="changeOpacity(this.value)" class="w-16 h-1 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-blue-600" title="화면 투명도 조절">
+                <input id="opacity-slider" type="range" min="10" max="100" value="100" oninput="changeOpacity(this.value)" class="w-16 h-1 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-blue-600">
             </div>
 
             <span id="current-time" class="text-xs font-medium text-slate-500 bg-white px-3 py-1.5 rounded-full shadow-xs border border-slate-100/80">로딩 중...</span>
             
             <div class="flex items-center gap-1 bg-white p-1 rounded-full shadow-xs border border-slate-100/80">
-                <button onclick="toggleDarkMode()" class="p-1.5 hover:bg-slate-100 rounded-full cursor-pointer transition text-slate-500" title="화면 테마 변경">
+                <button onclick="toggleDarkMode()" class="p-1.5 hover:bg-slate-100 rounded-full cursor-pointer transition text-slate-500">
                     <svg id="dark-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z" />
                     </svg>
                 </button>
-                <button onclick="fetchFinancialData()" class="p-1.5 hover:bg-slate-100 rounded-full cursor-pointer transition text-slate-500" title="새로고침">
+                <button onclick="fetchFinancialData()" class="p-1.5 hover:bg-slate-100 rounded-full cursor-pointer transition text-slate-500">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99" />
                     </svg>
@@ -53,7 +53,6 @@
     </header>
 
     <div class="max-w-6xl w-full mx-auto px-4 py-4 flex flex-col lg:flex-row gap-6 flex-grow">
-        
         <main class="flex-grow max-w-4xl space-y-6">
 
             <section>
@@ -97,19 +96,19 @@
                 <div class="grid grid-cols-2 gap-2">
                     <div class="bg-white p-3 px-4 rounded-2xl shadow-xs border border-slate-100/80 flex justify-between items-center">
                         <div class="text-sm font-medium text-slate-700"><span class="text-xs font-bold text-slate-400 mr-2">US</span>미국 달러</div>
-                        <div class="flex items-center gap-3"><span id="fx-usd" class="text-sm font-bold text-slate-800">-</span><span id="fx-rate-usd" class="text-xs font-semibold">-</span></div>
+                        <div class="flex items-center gap-3"><span id="fx-usd" class="text-sm font-bold text-slate-800">로딩중</span><span id="fx-rate-usd" class="text-xs font-semibold">-</span></div>
                     </div>
                     <div class="bg-white p-3 px-4 rounded-2xl shadow-xs border border-slate-100/80 flex justify-between items-center">
                         <div class="text-sm font-medium text-slate-700"><span class="text-xs font-bold text-slate-400 mr-2">JP</span>일본 엔 (100엔)</div>
-                        <div class="flex items-center gap-3"><span id="fx-jpy" class="text-sm font-bold text-slate-800">-</span><span id="fx-rate-jpy" class="text-xs font-semibold">-</span></div>
+                        <div class="flex items-center gap-3"><span id="fx-jpy" class="text-sm font-bold text-slate-800">로딩중</span><span id="fx-rate-jpy" class="text-xs font-semibold">-</span></div>
                     </div>
                     <div class="bg-white p-3 px-4 rounded-2xl shadow-xs border border-slate-100/80 flex justify-between items-center">
                         <div class="text-sm font-medium text-slate-700"><span class="text-xs font-bold text-slate-400 mr-2">CN</span>중국 위안</div>
-                        <div class="flex items-center gap-3"><span id="fx-cny" class="text-sm font-bold text-slate-800">-</span><span id="fx-rate-cny" class="text-xs font-semibold">-</span></div>
+                        <div class="flex items-center gap-3"><span id="fx-cny" class="text-sm font-bold text-slate-800">로딩중</span><span id="fx-rate-cny" class="text-xs font-semibold">-</span></div>
                     </div>
                     <div class="bg-white p-3 px-4 rounded-2xl shadow-xs border border-slate-100/80 flex justify-between items-center">
                         <div class="text-sm font-medium text-slate-700"><span class="text-xs font-bold text-slate-400 mr-2">EU</span>유럽 유로</div>
-                        <div class="flex items-center gap-3"><span id="fx-eur" class="text-sm font-bold text-slate-800">-</span><span id="fx-rate-eur" class="text-xs font-semibold">-</span></div>
+                        <div class="flex items-center gap-3"><span id="fx-eur" class="text-sm font-bold text-slate-800">로딩중</span><span id="fx-rate-eur" class="text-xs font-semibold">-</span></div>
                     </div>
                 </div>
             </section>
@@ -137,14 +136,14 @@
             </section>
 
             <section>
-                <h2 class="text-sm font-semibold text-slate-400 mb-2 px-1">🪙 암호화폐</h2>
+                <h2 class="text-sm font-semibold text-slate-400 mb-2 px-1">🪙 암호화폐 (원화)</h2>
                 <div class="grid grid-cols-3 gap-2">
                     <div class="bg-white p-3 px-4 rounded-2xl shadow-xs border border-slate-100/80 flex flex-col items-center justify-center text-center">
                         <div class="flex items-center gap-1.5 justify-center">
                             <span class="text-[13px] font-black text-amber-500 leading-none">₿</span>
                             <span class="text-[11px] font-extrabold text-amber-500 uppercase tracking-wider">BTC</span>
                         </div>
-                        <span id="coin-btc" class="text-sm font-bold block mt-1 text-slate-800">-</span>
+                        <span id="coin-btc" class="text-sm font-bold block mt-1 text-slate-800">로딩중</span>
                         <span id="coin-rate-btc" class="text-[11px] font-semibold">-</span>
                     </div>
                     <div class="bg-white p-3 px-4 rounded-2xl shadow-xs border border-slate-100/80 flex flex-col items-center justify-center text-center">
@@ -152,7 +151,7 @@
                             <svg class="w-3.5 h-3.5 text-indigo-500 fill-current" viewBox="0 0 24 24"><path d="M12 0L4.629 12.233 12 16.602l7.367-4.369L12 0zm0 18.061l-7.363-4.37L12 24l7.367-10.309-7.367 4.37z"/></svg>
                             <span class="text-[11px] font-extrabold text-indigo-500 uppercase tracking-wider">ETH</span>
                         </div>
-                        <span id="coin-eth" class="text-sm font-bold block mt-1 text-slate-800">-</span>
+                        <span id="coin-eth" class="text-sm font-bold block mt-1 text-slate-800">로딩중</span>
                         <span id="coin-rate-eth" class="text-[11px] font-semibold">-</span>
                     </div>
                     <div class="bg-white p-3 px-4 rounded-2xl shadow-xs border border-slate-100/80 flex flex-col items-center justify-center text-center">
@@ -160,7 +159,7 @@
                             <svg class="w-3.5 h-3.5 text-blue-400 fill-current" viewBox="0 0 24 24"><path d="M13.435 12l6.07-7.237h-2.977l-4.58 5.46L7.367 4.763H4.39L10.46 12l-6.07 7.237h2.977l4.58-5.46 4.581 5.46h2.977L13.435 12z"/></svg>
                             <span class="text-[11px] font-extrabold text-blue-400 uppercase tracking-wider">XRP</span>
                         </div>
-                        <span id="coin-xrp" class="text-sm font-bold block mt-1 text-slate-800">-</span>
+                        <span id="coin-xrp" class="text-sm font-bold block mt-1 text-slate-800">로딩중</span>
                         <span id="coin-rate-xrp" class="text-[11px] font-semibold">-</span>
                     </div>
                 </div>
@@ -184,7 +183,6 @@
                 <span class="text-[10px] text-slate-300 font-bold tracking-widest block">GOOGLE ADSENSE</span>
             </div>
         </aside>
-
     </div>
 
     <footer class="max-w-6xl w-full mx-auto px-4 py-6 text-center space-y-3">
@@ -226,91 +224,56 @@
             rateEl.innerText = `${sign}${rateVal}%`;
 
             rateEl.classList.remove('text-red-500', 'text-blue-500', 'text-slate-500');
-            if (rateVal > 0) {
-                rateEl.classList.add('text-red-500');
-            } else if (rateVal < 0) {
-                rateEl.classList.add('text-blue-500');
-            } else {
-                rateEl.classList.add('text-slate-500');
-            }
+            if (rateVal > 0) rateEl.classList.add('text-red-500');
+            else if (rateVal < 0) rateEl.classList.add('text-blue-500');
+            else rateEl.classList.add('text-slate-500');
         }
 
+        // 🪙 코인 (원화 krw로 완벽 변경)
         async function fetchCrypto() {
             try {
-                const url = 'https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum,ripple&vs_currencies=usd&include_24hr_change=true';
+                const url = 'https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum,ripple&vs_currencies=krw&include_24hr_change=true';
                 const res = await fetch(url);
                 if (!res.ok) throw new Error('CoinGecko 응답 오류');
                 const data = await res.json();
 
-                renderUI('coin-btc', 'coin-rate-btc', '$' + data.bitcoin.usd.toLocaleString('en-US'), parseFloat(data.bitcoin.usd_24h_change.toFixed(2)));
-                renderUI('coin-eth', 'coin-rate-eth', '$' + data.ethereum.usd.toLocaleString('en-US'), parseFloat(data.ethereum.usd_24h_change.toFixed(2)));
-                renderUI('coin-xrp', 'coin-rate-xrp', '$' + data.ripple.usd.toFixed(2), parseFloat(data.ripple.usd_24h_change.toFixed(2)));
+                renderUI('coin-btc', 'coin-rate-btc', data.bitcoin.krw.toLocaleString('ko-KR') + '원', parseFloat(data.bitcoin.krw_24h_change.toFixed(2)));
+                renderUI('coin-eth', 'coin-rate-eth', data.ethereum.krw.toLocaleString('ko-KR') + '원', parseFloat(data.ethereum.krw_24h_change.toFixed(2)));
+                renderUI('coin-xrp', 'coin-rate-xrp', data.ripple.krw.toLocaleString('ko-KR') + '원', parseFloat(data.ripple.krw_24h_change.toFixed(2)));
             } catch (err) {
                 console.error('코인 데이터 실패:', err);
             }
         }
 
-        async function fetchFX() {
-            try {
-                const yesterday = new Date();
-                yesterday.setDate(yesterday.getDate() - 1);
-                const yDate = yesterday.toISOString().split('T')[0];
-
-                const [resNow, resYest] = await Promise.all([
-                    fetch('https://api.frankfurter.app/latest?from=KRW&to=USD,JPY,CNY,EUR'),
-                    fetch(`https://api.frankfurter.app/${yDate}?from=KRW&to=USD,JPY,CNY,EUR`)
-                ]);
-
-                if (!resNow.ok || !resYest.ok) throw new Error('Frankfurter 데이터 오류');
-                const [dataNow, dataYest] = await Promise.all([resNow.json(), resYest.json()]);
-
-                function calcFX(rateNow, rateYest, multiplier = 1) {
-                    const priceNow  = parseFloat((multiplier / rateNow).toFixed(1));
-                    const priceYest = parseFloat((multiplier / rateYest).toFixed(1));
-                    const change = parseFloat(((priceNow - priceYest) / priceYest * 100).toFixed(2));
-                    return { priceNow, change };
-                }
-
-                const usd = calcFX(dataNow.rates.USD, dataYest.rates.USD);
-                renderUI('fx-usd', 'fx-rate-usd', usd.priceNow.toLocaleString('ko-KR') + '원', usd.change);
-
-                const jpy = calcFX(dataNow.rates.JPY, dataYest.rates.JPY, 100);
-                renderUI('fx-jpy', 'fx-rate-jpy', jpy.priceNow.toLocaleString('ko-KR') + '원', jpy.change);
-
-                const cny = calcFX(dataNow.rates.CNY, dataYest.rates.CNY);
-                renderUI('fx-cny', 'fx-rate-cny', cny.priceNow.toLocaleString('ko-KR') + '원', cny.change);
-
-                const eur = calcFX(dataNow.rates.EUR, dataYest.rates.EUR);
-                renderUI('fx-eur', 'fx-rate-eur', eur.priceNow.toLocaleString('ko-KR') + '원', eur.change);
-            } catch (err) {
-                console.error('환율 데이터 실패:', err);
-            }
-        }
-
-        // 🟢 Vercel 서버리스에서 실제 글로벌 증시 데이터를 가져오는 함수 추가!
-        async function fetchStocks() {
+        // 📈 Vercel 서버리스에서 주식 + 환율 한번에 땡겨오기
+        async function fetchStocksAndFX() {
             try {
                 const res = await fetch('/api/stocks');
                 if (!res.ok) throw new Error('서버리스 API 응답 오류');
                 const data = await res.json();
 
-                if (data.kospi) renderUI('idx-kospi', 'rate-kospi', data.kospi.price, data.kospi.rate);
-                if (data.kosdaq) renderUI('idx-kosdaq', 'rate-kosdaq', data.kosdaq.price, data.kosdaq.rate);
-                if (data.snp) renderUI('idx-snp', 'rate-snp', data.snp.price, data.snp.rate);
-                if (data.nasdaq) renderUI('idx-nasdaq', 'rate-nasdaq', data.nasdaq.price, data.nasdaq.rate);
-                if (data.nikkei) renderUI('idx-nikkei', 'rate-nikkei', data.nikkei.price, data.nikkei.rate);
-                if (data.shanghai) renderUI('idx-shanghai', 'rate-shanghai', data.shanghai.price, data.shanghai.rate);
+                // 증시 렌더링
+                if (data.kospi) renderUI('idx-kospi', 'rate-kospi', data.kospi.price.toLocaleString('en-US', {maximumFractionDigits:2}), data.kospi.rate);
+                if (data.kosdaq) renderUI('idx-kosdaq', 'rate-kosdaq', data.kosdaq.price.toLocaleString('en-US', {maximumFractionDigits:2}), data.kosdaq.rate);
+                if (data.snp) renderUI('idx-snp', 'rate-snp', data.snp.price.toLocaleString('en-US', {maximumFractionDigits:2}), data.snp.rate);
+                if (data.nasdaq) renderUI('idx-nasdaq', 'rate-nasdaq', data.nasdaq.price.toLocaleString('en-US', {maximumFractionDigits:2}), data.nasdaq.rate);
+                if (data.nikkei) renderUI('idx-nikkei', 'rate-nikkei', data.nikkei.price.toLocaleString('en-US', {maximumFractionDigits:2}), data.nikkei.rate);
+                if (data.shanghai) renderUI('idx-shanghai', 'rate-shanghai', data.shanghai.price.toLocaleString('en-US', {maximumFractionDigits:2}), data.shanghai.rate);
+
+                // 환율 렌더링
+                if (data.usd) renderUI('fx-usd', 'fx-rate-usd', data.usd.price.toLocaleString('ko-KR', {maximumFractionDigits:1}) + '원', data.usd.rate);
+                if (data.jpy) renderUI('fx-jpy', 'fx-rate-jpy', (data.jpy.price * 100).toLocaleString('ko-KR', {maximumFractionDigits:1}) + '원', data.jpy.rate); // 100엔 기준
+                if (data.cny) renderUI('fx-cny', 'fx-rate-cny', data.cny.price.toLocaleString('ko-KR', {maximumFractionDigits:1}) + '원', data.cny.rate);
+                if (data.eur) renderUI('fx-eur', 'fx-rate-eur', data.eur.price.toLocaleString('ko-KR', {maximumFractionDigits:1}) + '원', data.eur.rate);
             } catch (err) {
-                console.error('증시 데이터 실패:', err);
+                console.error('증시/환율 데이터 실패:', err);
             }
         }
 
         async function fetchFinancialData() {
-            // 코인, 환율, 그리고 Vercel 주식 API를 동시에 호출
             await Promise.allSettled([
                 fetchCrypto(),
-                fetchFX(),
-                fetchStocks() 
+                fetchStocksAndFX() 
             ]);
             updateTime();
         }
